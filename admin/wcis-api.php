@@ -2,7 +2,8 @@
 
 class WCIS_API {
   private $api_key;
-  private $api_base = 'http://pro.rajaongkir.com/api';
+	private $api_base = 'https://api.rajaongkir.com/starter';
+	//private $api_base = 'http://pro.rajaongkir.com/api';
 
   const PROVINCE_URL = '/province';
   const COST_URL = '/cost';
@@ -43,7 +44,8 @@ class WCIS_API {
       $costs = $response;
       return $costs;
     } else {
-      return $response;
+//      return $response;
+	    echo "not found";
     }
   }
 
@@ -56,18 +58,19 @@ class WCIS_API {
     @param string $endpoint
     @param array $extra_options - *Optional*. Additional arguments
     @return array - JSON response
+  $endpoint,
   */
   private function call($endpoint, $extra_options = array() ) {
     $curl = curl_init();
     $curl_options = array(
-      CURLOPT_URL => $this->api_base . $endpoint,
-      CURLOPT_RETURNTRANSFER => true,
-      CURLOPT_ENCODING => '',
-      CURLOPT_MAXREDIRS => 10,
-      CURLOPT_TIMEOUT => 10,
-      CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
-      CURLOPT_CUSTOMREQUEST => 'GET',
-      CURLOPT_HTTPHEADER => array(
+	    CURLOPT_URL            => $this->api_base . "/city?id=39&province=5",
+	    CURLOPT_RETURNTRANSFER => true,
+	    CURLOPT_ENCODING       => '',
+	    CURLOPT_MAXREDIRS      => 10,
+	    CURLOPT_TIMEOUT        => 10,
+	    CURLOPT_HTTP_VERSION   => CURL_HTTP_VERSION_1_1,
+	    CURLOPT_CUSTOMREQUEST  => 'GET',
+	    CURLOPT_HTTPHEADER     => array(
         'key: ' . $this->api_key
       ),
     );

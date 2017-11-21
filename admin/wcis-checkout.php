@@ -9,7 +9,7 @@ class WCIS_Checkout {
     add_action('woocommerce_checkout_update_order_meta', array($this, 'update_order_meta'), 99, 2);
 
     add_filter('woocommerce_cart_shipping_packages', array($this, 'parse_shipping_package') );
-    // add_filter('woocommerce_shipping_packages', array($this, 'parse_shipping_package') );
+
   }
 
   /*

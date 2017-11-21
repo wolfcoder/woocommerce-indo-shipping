@@ -91,9 +91,9 @@ class WCIS_Data {
     @param int $city_id
     @return array - The city list
   */
-  static function get_jne_district_exc($city_id) {
-    return array_key_exists($city_id, self::JNE_DISTRICT_EXC) ? self::JNE_DISTRICT_EXC[$city_id] : null;
-  }
+//  static function get_jne_district_exc($city_id) {
+//    return array_key_exists($city_id, self::JNE_DISTRICT_EXC) ? self::JNE_DISTRICT_EXC[$city_id] : null;
+//  }
 
 
   /////
@@ -118,11 +118,11 @@ class WCIS_Data {
     return json_decode($fileraw, true);
   }
 
-  const JNE_DISTRICT_EXC = array(
-    '63' => array(
-      '842' // bunga mas
-    ),
-  );
+//  const JNE_DISTRICT_EXC = array(
+//    '63' => array(
+//      '842' // bunga mas
+//    ),
+//  );
 
   /*
     Add prefix to city and district that have the same name
