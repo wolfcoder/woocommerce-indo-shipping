@@ -24,7 +24,7 @@ class WCIS_Data {
     @retun array
   */
   static function get_cities($prov_id) {
-    $data = self::_get_json_file('cities/' . $prov_id . '.json');
+	  $data = self::_get_json_file( 'cities-starter/' . $prov_id . '.json' );
 
     // if exists, filter and return it
     if($data) {

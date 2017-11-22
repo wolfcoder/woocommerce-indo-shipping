@@ -63,7 +63,7 @@ class WCIS_API {
   private function call($endpoint, $extra_options = array() ) {
     $curl = curl_init();
     $curl_options = array(
-	    CURLOPT_URL            => $this->api_base . "/city?id=39&province=5",
+	    CURLOPT_URL            => $this->api_base . $endpoint,
 	    CURLOPT_RETURNTRANSFER => true,
 	    CURLOPT_ENCODING       => '',
 	    CURLOPT_MAXREDIRS      => 10,

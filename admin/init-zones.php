@@ -54,9 +54,9 @@ class WCIS_Zones_Method extends WC_Shipping_Method {
 
     $args = array(
       'origin' => $this->main_settings['city'],
-      'originType' => 'city',
+//      'originType' => 'city',
       'destination' => $package['destination']['destination_id'],
-      'destinationType' => 'subdistrict',
+//      'destinationType' => 'subdistrict',
       'weight' => $weight,
       'courier' => $selected_couriers
     );
